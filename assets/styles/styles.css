@@ -1,0 +1,364 @@
+/*Definincion de variables globales de colores*/
+:root{
+  --lighting-color:#1b3050; /*Color principal claro (azul turquesa)*/
+  --dark-color: #2c4061; /*Color secundario oscuro (azul marino)*/
+  --darker-color: #79929e; /*Variante mas oscura*/
+  --color: #0d0e0e; /*color de acento*/ 
+
+}
+
+/*Aplica a todos los elementos*/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Edu VIC WA NT Hand Pre", cursive;
+}
+
+/*Ajuste base del tamaño fuente html*/
+html{
+  font-size: 62.5%; /*hace que 1rem sea = 10px (62.5% de 16px)*/
+}
+
+/*Estilos comunes a body y html*/
+body, html{
+  font-weight: 300; /*Grosor de fuente ligero*/
+  line-height: 1.4; /*Interlineado para mejorar la lectura*/
+  scroll-behavior: smooth; /*scroll suave para enlaces internos*/
+  color: white; /*color de texto por defecto blanco*/
+}
+
+body{
+  font-size: 1.4rem; /*Tamaño de texto base: 14px */
+}
+
+/*contenedor centralizdo*/
+.container{
+  max-width: 1300px; /*Ancho maximo del contenedor*/
+  margin: 0 auto; /*centra horizontalmente*/
+}
+
+/*estilos para enlaces*/
+a{
+  text-decoration: none;
+  color: white;
+}
+
+/*Estilos para listas*/
+ul{
+  list-style: none; /*Quita puntos*/
+}
+
+/*Encabezado sticky*/
+header{
+  position: sticky; /*Se queda fijo al hacer el scroll*/
+  top: 0; /*Se ancla arriba la ventana sin moverse*/ 
+  z-index: 100; /* se ve Por encima de otros elementos*/ /*"siempre 100 ax*/ /* nos asegura que header siempre estara por encima de cualquier elento*/
+  background-color: var(--lighting-color);   
+}
+
+/*Espaciado interno y distribucion del nav*/
+nav{
+  display: flex; /*Fexbox para alinear los elementos de forma horizontal*/
+  justify-content: space-between; /*Separa el logo y menu*/
+  align-content: center; /*Centrarlo verticalmente*/
+  padding: 1rem; /*Paddin interior de 10px*/
+}
+
+/*Lista horizontal en nav*/
+nav ul{
+  display: flex; /*Flexbox en la lista*/
+  gap: 1rem; /*Espacio entre items*/  
+}
+
+/*items del menu*/
+nav li{
+  font-size: 1.8rem;
+  border-bottom: 0.4rem transparent solid; /*linea inferior transparente*/
+  transition: 0.3s ease-in-out /*Transicion suave en hover*/
+}
+
+/*hover en items del menu*/
+nav li:hover{
+  border-bottom: 0.4rem var(--darker-color) solid; /* linea inferior gris claro*/
+}
+
+.logo{
+  font-size: 2rem; /*tamaño de texto de 20px*/
+  font-weight: 700; /*Fuente negrita*/ 
+}
+
+/*Seccion*/
+#hero{
+  background-image: url(/assets/images/fondoweb.jpg); /*azul marino*/
+  padding: 4rem 0; /*padding vertical de 40px*/
+  border-bottom: 4px solid var(--lighting-color);
+  max-height: 100vh; /*Altura maxima igual al viewport*/
+}
+
+/*Contenedor interno de hero*/
+#hero .container{
+  display: flex; /*flexbox para imagen y texto*/
+  justify-content: space-around; /*separacion uniforme*/
+  align-items: center; /*Centrado verticalmente*/
+}
+
+/*Bloque de contenido del hero*/
+.hero_content{
+  display: grid; /*grid para centrar facilmente*/
+  place-items: center; /*centra horizontal y verticalmente*/
+}
+
+/*bloque de imagen de hero*/
+.hero_image{
+  max-width: 45%; /*ancho maximo 45% del contenedor*/
+  overflow: hidden; /*oculta lo que sobresalga*/
+}
+
+/*Estilo de la imagen*/
+.hero_image img{
+  width: 100%;
+  height: auto;
+  display: block; /*Elimina espacio inferior tipico de los imgs inline*/
+  border-radius: 0.5rem; /*Border redondeado de 5px*/
+  object-fit: cover; /*recorta/ ajusta la imagen cubriendo el contenedor*/
+}
+
+/*Titulo principal h1*/
+#hero h1{
+  font-size: 3rem; /*tamaño de texto: 30px*/
+  font-weight: bold; /*negrita*/
+}
+
+/*Texto "hi" grande*/
+.hi_text {
+  font-size: 6rem; /*tamaño de texto 60px*/
+  font-weight: bold; /*nrgrita*/
+  color: rgb(196, 196, 177);
+}
+
+/*Texto de nombre*/
+.name_text{
+  font-size: 5rem;
+}
+
+/*Subtitulo animado*/
+#hero h2 {
+    font-size: 4rem; /*tamaño a 40px*/
+    font-weight: bold; 
+    overflow: hidden; /*Oculta el texto no escrito*/
+    border-right: 0.15em solid orange; /*Cursor de maquina de escribir*/
+    white-space: nowrap;/*Evita el salto de linea*/
+    margin: 0 auto; /*Centra horizontalmente*/
+    animation: typing 5s steps(40,end), blink-caret 0.75s step-end infinite;
+}
+
+/*animacion typing*/
+@keyframes typing {
+  from {width: 0; } /*Empieza con ancho 0*/
+  to {width: 100% }  /*termina mostrando texto*/
+}
+
+/*Animacion caret parpadeante*/
+@keyframes blink-caret {
+  from, to { border-color: transparent;} 
+  50% {border-color: rgb(196, 199, 18);}  /*padding inferior de 40px*/
+}
+
+/*Seccion de proyectos*/
+#project{
+  background-color: var(--dark-color);
+  padding-bottom: 4rem; /*padding inferior de 40px*/
+}
+
+/*titulo de proyectos*/
+#project h2{
+  font-size: 6rem;
+  text-align: center;
+  padding: 2rem 0; /*padding vertical de 20px*/
+}
+
+.project_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /*Columnas fluidas de minimo 320px*/
+  gap: 2rem; /*Espacio de 20px entre cada items*/
+}
+
+/*Cada item del grid*/
+.grid_item{
+  display: grid; /*grid para centrar*/
+  place-items: center; /*centro completo*/  
+}
+
+/*Estilo base de cada card*/
+.card{
+  width: 100%; /*Ancho completo dentro del grid_item*/
+  max-width: 320px; /*ancho mximo de 320px*/
+  display: flex;
+  flex-direction: column; /*apilar verticalmente*/
+  border-radius: 0.5rem;
+  overflow: hidden; /*recorta lo que sobre salga*/
+  transition: 0.2 ease-in-out; /*transicion suave al hover*/
+}
+
+/*hover en card: aumenta de tamaño*/
+.card:hover {
+  transform: scale(1.05); /*escala a 105%  */
+}
+
+/*hover en la imagen card*/
+.card:hover img{
+  transform: scale(1.05); /*Escala la imagen*/
+  opacity: 0.8; /*ligera transparencia*/
+  transition: 0.3s ease-in-out; /*transicion propia*/
+}
+
+/*Contenido interior del card*/
+.card_content{
+  padding: 2rem; /*padding interno de 20px*/
+  position: relative; /*posicionamiento para arriba*/
+  top: -6.5rem; /*Situa el bloque sobre la imagen*/
+  margin-bottom: -6.5rem; /*ajusta espacio inferior*/
+  transition: 0.5s ease-in-out; /*transicion del hover*/
+  transform: translateY(100px); /*Empieza desplazado hacia abajo*/
+}
+
+/*hover en contenido: lo que muestra*/
+.card:hover .card_content{
+  background: white;
+  color: var(--lighting-color);
+  transform: translateY(0); /*vuelve a su posicion original*/
+}
+
+/*Titulo dentro de card*/
+.card_content h3{
+  text-align: center; /*centra el texto*/
+}
+
+/*REGLA BASE PARA LAS MINIATURAS*/
+.card img{
+  width: 100%; /*Ancho completo*/
+  height: 360px; /*Altura fija 360px*/
+  object-fit: cover; /*Recorta para cubrir el contenedor*/
+  display: block; /*elimina espacios extras*/
+
+  /*Comparacion relacion aspecto:
+  1/1 cuadrado
+  16/9 pantalla HD (ancho)
+  4/3 viejas pantallas
+  3/4 Vertical*/
+  aspect-ratio: 3/4; /*relacion de aspecto 3:4*/ 
+}
+
+/*seccion de contacto*/
+#contact{
+  background: var(--lighting-color);
+}
+
+/*titulo de contacto*/
+#contact h2{
+  font-size: 6rem; /*tamaño de texto 60px*/
+  text-align: center; /*Centra el texto*/
+  margin: 1rem 0; /*margen vetical de 10px*/
+}
+
+#contact .container{
+  height: 90vh; /*altura 90% del viewport*/
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  justify-content: center;
+}
+
+/*grid para contacto (iconos + texto)*/
+.top_contact{
+  max-width: 800px;
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(80px,1fr));
+  gap: 1rem;
+}
+
+/*cada forma de contacto*/
+.contact_way{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+/*iconos de contacto*/
+.contact_way i{
+  font-size: 3rem;
+}
+
+/*texto dentro de cada forma de contacto*/
+.contact_way h3{
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+/*grid para enlaces o elementos al pie del formulario*/
+.bottom_contact {
+  max-width: 400px;
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 1rem;
+}
+
+/*pie de pagina*/
+footer {
+  background: var(--color);
+  padding: 2rem;
+  color: white;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+/*ajustes para pantallas <=500px*/
+@media (max-width: 500px){
+  html{
+    font-size: 25%; /*reduce base rem a 40% */  
+  }
+  #hero .container{
+    flex-direction: column;
+  }
+  .hero_image{
+    display: grid;
+    place-items: center;
+  }
+  #contact .container{
+    height: 50vh; /*ajusta altura a 50% viewport*/
+  }
+  .card img{
+    height: 220px; /*altura mas razonable al movil*/
+  }
+}
+
+/*ajustes para pantallas <=900px*/
+@media (max-width: 900px){
+  html{
+    font-size: 40%;
+  }
+    #hero .container{
+      flex-direction: column;
+    }
+    .hero_image{
+      display: grid;
+      place-items: center;
+    }
+    #contact .container{
+      height: 70vh;
+    }
+    .card img{
+      height: 300px;
+    }  
+}
+
+/*ajustes para pantallas >1000px*/
+@media (min-width: 1000px) {
+  .top_contact{
+    grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
+    gap: 2rem;
+  }
+}
