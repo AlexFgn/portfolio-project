@@ -12,7 +12,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Edu VIC WA NT Hand Pre", cursive;
+  font-family: "Savate", sans-serif;
 }
 
 /*Ajuste base del tamaño fuente html*/
@@ -80,7 +80,7 @@ nav li{
 
 /*hover en items del menu*/
 nav li:hover{
-  border-bottom: 0.4rem var(--darker-color) solid; /* linea inferior gris claro*/
+  border-bottom: 0.4rem blue solid; /* linea inferior gris claro*/
 }
 
 .logo{
@@ -92,7 +92,7 @@ nav li:hover{
 #hero{
   background-image: url(/assets/images/fondoweb.jpg); /*azul marino*/
   padding: 4rem 0; /*padding vertical de 40px*/
-  border-bottom: 4px solid var(--lighting-color);
+  border-bottom: 4px solid beige;
   max-height: 100vh; /*Altura maxima igual al viewport*/
 }
 
@@ -117,7 +117,7 @@ nav li:hover{
 
 /*Estilo de la imagen*/
 .hero_image img{
-  width: 100%;
+  width: 70%; /*para cambiar el tamaño de la imagen del "logo"*/
   height: auto;
   display: block; /*Elimina espacio inferior tipico de los imgs inline*/
   border-radius: 0.5rem; /*Border redondeado de 5px*/
@@ -134,7 +134,7 @@ nav li:hover{
 .hi_text {
   font-size: 6rem; /*tamaño de texto 60px*/
   font-weight: bold; /*nrgrita*/
-  color: rgb(196, 196, 177);
+  color: rgb(212, 212, 194);
 }
 
 /*Texto de nombre*/
@@ -147,7 +147,7 @@ nav li:hover{
     font-size: 4rem; /*tamaño a 40px*/
     font-weight: bold; 
     overflow: hidden; /*Oculta el texto no escrito*/
-    border-right: 0.15em solid orange; /*Cursor de maquina de escribir*/
+    border-right: 0.15em solid rgb(247, 183, 66); /*Cursor de maquina de escribir*/
     white-space: nowrap;/*Evita el salto de linea*/
     margin: 0 auto; /*Centra horizontalmente*/
     animation: typing 5s steps(40,end), blink-caret 0.75s step-end infinite;
@@ -157,6 +157,7 @@ nav li:hover{
 @keyframes typing {
   from {width: 0; } /*Empieza con ancho 0*/
   to {width: 100% }  /*termina mostrando texto*/
+  
 }
 
 /*Animacion caret parpadeante*/
