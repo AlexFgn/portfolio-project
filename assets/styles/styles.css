@@ -90,7 +90,7 @@ nav li:hover{
 
 /*Seccion*/
 #hero{
-  background-image: url(/assets/images/fondoweb.jpg); /*azul marino*/
+  background-image: url("/assets/images/fondoweb.jpg"); /*azul marino*/
   padding: 4rem 0; /*padding vertical de 40px*/
   border-bottom: 4px solid beige;
   max-height: 100vh; /*Altura maxima igual al viewport*/
